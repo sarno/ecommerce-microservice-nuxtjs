@@ -17,6 +17,81 @@
             <h1 class="text-xl">Selamat Datang</h1>
             <p>Untuk melanjutkan, silahkan masuk</p>
           </div>
+          <form
+            @submit.prevent="handleSubmit"
+            class="needs-validation"
+            novalidate
+          >
+            <div class="flex flex-col gap-5">
+              <div class="flex flex-col gap-3">
+                <div class="w-full">
+                  <label for="formSigninEmail" class="invisible hidden"
+                    >Email address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base"
+                    id="formSigninEmail"
+                    placeholder="Email"
+                    v-model="email"
+                    required
+                  />
+                  <div class="invalid-feedback">Please enter name.</div>
+                </div>
+                <div class="w-full">
+                  <!-- input -->
+                  <div class="password-field relative">
+                    <label for="formSigninPassword" class="invisible hidden"
+                      >Password</label
+                    >
+                    <div class="password-field relative">
+                      <input
+                        :type="showPassword ? 'text' : 'password'"
+                        class="form-control border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base fakePassword"
+                        id="formSigninPassword"
+                        placeholder="*****"
+                        v-model="password"
+                        required
+                      />
+                      <span @click="togglePassword">
+                        <i
+                          :class="showPassword ? 'ti ti-eye' : 'ti ti-eye-off'"
+                          class="passwordToggler"
+                        ></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-4">
+                <div class="flex justify-between w-full">
+                  <div>
+                    Lupa Password?
+                    <a href="/auth/forgot-password" class="text-green-600"
+                      >Reset</a
+                    >
+                  </div>
+                </div>
+
+                <!-- btn -->
+                <div class="w-full grid">
+                  <button
+                    :disabled="authStore.loading"
+                    type="submit"
+                    class="btn inline-flex items-center gap-x-2 bg-green-600 text-white border-green-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-green-700 active:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300"
+                  >
+                    <span v-if="authStore.loading">Loading...</span>
+                    <span v-else>Masuk</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- link -->
+            <div class="mt-2">
+              Belum punya akun?
+              <a href="signup" class="text-green-600">Daftar</a>
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -44,14 +44,14 @@ const handleSubmit = async () => {
     // Error sudah ditangani di store
     console.error("SignUp error:", error);
   }
+};
 
-  const togglePassword = () => {
-    showPassword.value = !showPassword.value;
-  };
+const togglePassword = () => {
+  showPassword.value = !showPassword.value;
+};
 
-  const togglePasswordConfirm = () => {
-    showPasswordConfirm.value = !showPasswordConfirm.value;
-  };
+const togglePasswordConfirm = () => {
+  showPasswordConfirm.value = !showPasswordConfirm.value;
 };
 </script>
 

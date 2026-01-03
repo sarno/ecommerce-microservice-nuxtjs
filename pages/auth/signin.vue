@@ -22,6 +22,14 @@
             class="needs-validation"
             novalidate
           >
+            <!-- Alert Error -->
+            <div
+              v-if="authStore.error"
+              class="mb-4 p-4 text-sm text-red-800 rounded-lg bg-red-50"
+              role="alert"
+            >
+              <span class="font-medium">Gagal!</span> {{ authStore.error }}
+            </div>
             <div class="flex flex-col gap-5">
               <div class="flex flex-col gap-3">
                 <div class="w-full">
@@ -118,17 +126,18 @@ const togglePassword = () => {
   showPassword.value = !showPassword.value;
 };
 
-const handleSubmit = async () => {};
-try {
-  await authStore.signin(email.value, password.value);
-  if (authStore.user?.role === "admin") {
-    router.push("/dashboard");
-  } else {
-    router.push("/");
+const handleSubmit = async () => {
+  try {
+    await authStore.signin(email.value, password.value);
+    if (authStore.user?.role === "admin") {
+      router.push("/dashboard");
+    } else {
+      router.push("/");
+    }
+  } catch (error) {
+    console.error("Login error:", error);
   }
-} catch (error) {
-  console.error("Login error:", error);
-}
+};
 </script>
 
 <style scoped></style>

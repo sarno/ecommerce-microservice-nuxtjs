@@ -8,7 +8,10 @@ export default defineNuxtConfig({
     },
   },
   modules: ["@nuxt/ui", "@pinia/nuxt"],
-  css: ["~/assets/css/theme.min.css"],
+  css: [
+    "~/assets/css/theme.min.css",
+    "@tabler/icons-webfont/dist/tabler-icons.min.css",
+  ],
   build: {
     transpile: ["bootstrap"],
   },

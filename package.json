@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/ui": "^4.3.0",
     "@pinia/nuxt": "^0.11.3",
+    "@tabler/icons-webfont": "^3.36.1",
     "bootstrap": "^5.3.8",
     "nuxt": "^3.20.2",
     "tailwindcss-animated": "^2.0.0",

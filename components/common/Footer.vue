@@ -6,7 +6,7 @@
         <!-- Categories Column -->
         <div class="w-full md:w-full lg:w-1/3 flex flex-col gap-4 mb-6">
           <h6>Categories</h6>
-          <div class="flex flex-wrap">
+          <!-- <div class="flex flex-wrap">
             <div class="w-1/2">
               <ul class="flex flex-col gap-2">
                 <li v-for="(category, index) in categoriesLeft" :key="index">
@@ -31,13 +31,13 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <!-- Other Links Columns -->
         <div class="w-full md:w-full lg:w-2/3">
           <div class="flex flex-wrap">
-            <div
+            <!-- <div
               v-for="(section, index) in footerSections"
               :key="index"
               class="w-1/2 sm:w-1/2 md:w-1/4 flex flex-col gap-4 mb-6"
@@ -53,7 +53,7 @@
                   </NuxtLink>
                 </li>
               </ul>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

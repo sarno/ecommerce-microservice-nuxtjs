@@ -41,7 +41,7 @@ export const useAuthStore = defineStore("auth", {
         tokenCookie.value = this.token;
 
         const userCookie = useCookie("user");
-        userCookie.value = JSON.stringify(this.user);
+        userCookie.value = this.user;
         // localStorage.setItem('token', this.token)
         // localStorage.setItem('user', JSON.stringify(this.user))
 

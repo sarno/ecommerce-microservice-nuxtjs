@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiUserBaseUrl: process.env.NUXT_USER_API_BASE_URL,
+      apiProductBaseUrl: process.env.NUXT_PRODUCT_API_BASE_URL,
     },
   },
   modules: ["@nuxt/ui", "@pinia/nuxt"],

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       apiProductBaseUrl: process.env.NUXT_PRODUCT_API_BASE_URL,
     },
   },
-  modules: ["@nuxt/ui", "@pinia/nuxt"],
+  modules: ["@nuxt/ui", "@pinia/nuxt", "nuxt-icon"],
   css: [
     "~/assets/css/theme.min.css",
     "@tabler/icons-webfont/dist/tabler-icons.min.css",

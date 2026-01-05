@@ -55,12 +55,11 @@ export const useAuthStore = defineStore("auth", {
     },
 
     isSuperAdmin() {
-      return this.user?.role === "Super Admin";
+      return this.user?.role === "admin" || this.user?.role === "Super Admin";
     },
 
     logout() {
-      this.user = null;
-      this.token = null;
+      this.$reset();
       const tokenCookie = useCookie("token");
       tokenCookie.value = null;
       const userCookie = useCookie("user");

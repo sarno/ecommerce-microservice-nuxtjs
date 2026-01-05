@@ -1,8 +1,11 @@
 export default defineNuxtRouteMiddleware(async (to, from) => {
   const authStore = useAuthStore();
   await authStore.checkAuth();
-  // Cek role user
-  if (!authStore.user?.role || authStore.user.role !== "admin") {
+
+  if (
+    !authStore.user?.role ||
+    !["admin", "Super Admin"].includes(authStore.user.role)
+  ) {
     return navigateTo("/");
   }
 });
